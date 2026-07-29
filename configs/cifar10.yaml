@@ -1,0 +1,32 @@
+dataset: cifar10
+num_classes: 10
+architecture: resnet18
+input_shape: [3, 32, 32]
+
+victim:
+  epochs: 60
+  batch_size: 128
+  lr: 0.1
+  weight_decay: 5.0e-4
+  momentum: 0.9
+
+geometry:
+  n_projections: 200
+  samples_per_class: 500
+  semantic_source: word_embedding   # or "fallback" if spaCy unavailable
+  alpha: 0.3                        # geometric/semantic balance
+  k: 5                              # confusion zone width
+
+trigger:
+  blend_alpha: 0.15
+
+bait_w:
+  epochs: 60
+  poison_rate: 0.10
+  lr: 0.1
+  weight_decay: 5.0e-4
+  momentum: 0.9
+
+normalize:
+  mean: [0.4914, 0.4822, 0.4465]
+  std: [0.2470, 0.2435, 0.2616]
