@@ -1,5 +1,4 @@
-# BAIT-W: Barycenter-Anchored Injection via Target-zone dispersal, Wasserstein-guided
-
+# SWIFT: Sliced Wasserstein Informed Feature Space Triggering for Untargeted Backdoor Attacks
 An untargeted backdoor attack that derives its dispersion targets directly from
 a victim classifier's own feature-space geometry, rather than through
 engineered loss functions or external vision-language models.
@@ -35,7 +34,7 @@ even at 90% channel removal (see paper for full defense evaluation).
 ## Repository structure
 
 ```
-bait-w-repo/
+swift-repo/
 ├── run_bait_w.py              # end-to-end pipeline entry point
 ├── configs/
 │   ├── cifar10.yaml
