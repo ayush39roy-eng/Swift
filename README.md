@@ -4,7 +4,7 @@ a victim classifier's own feature-space geometry, rather than through
 engineered loss functions or external vision-language models.
 
 Instead of forcing triggered inputs toward an arbitrary set of wrong classes
-(as in prior loss-engineered untargeted attacks), BAIT-W identifies each
+(as in prior loss-engineered untargeted attacks), swift identifies each
 class's *naturally confusable* classes by combining:
 
 - **Sliced Wasserstein distance** between penultimate-layer feature
@@ -28,7 +28,7 @@ optimization are required.
 | GTSRB | PreActResNet18 | 5 | 97.3% | 99.8% | 0.979 | 99.4% |
 | MNIST | SimpleCNN | 3 | 98.7% | 99.6% | 0.957 | 99.3% |
 
-BAIT-W evades Neural Cleanse, STRIP, and SentiNet, and resists fine-pruning
+swift evades Neural Cleanse, STRIP, and SentiNet, and resists fine-pruning
 even at 90% channel removal (see paper for full defense evaluation).
 
 ## Repository structure
@@ -44,7 +44,7 @@ swift-repo/
 │   ├── trigger.py              # globally-blended sinusoidal trigger
 │   ├── geometry.py              # Sliced Wasserstein + confusion-zone selection
 │   ├── semantic.py              # semantic distance sources
-│   ├── train.py                 # victim + BAIT-W training loops
+│   ├── train.py                 # victim + swift training loops
 │   ├── evaluate.py              # CA, ASR, DS, Zone Accuracy, Max Concentration
 │   └── defenses/
 │       ├── neural_cleanse.py
@@ -88,7 +88,7 @@ fine-pruning results.
 
 ```bibtex
 @article{baitw2026,
-  title   = {BAIT-W: Geometry-Guided Untargeted Backdoor Attacks via Hybrid Wasserstein-Semantic Confusion Zones},
+  title   = {swift: Geometry-Guided Untargeted Backdoor Attacks via Hybrid Wasserstein-Semantic Confusion Zones},
   author  = {[Author names]},
   year    = {2026},
   note    = {Working draft, AIMS-DTU}
