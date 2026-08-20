@@ -1,4 +1,4 @@
-"""End-to-end BAIT-W pipeline: train victim -> compute confusion-zone
+"""End-to-end swift pipeline: train victim -> compute confusion-zone
 geometry -> train backdoored model -> evaluate attack + defenses.
 
 Usage:
@@ -106,7 +106,7 @@ def main(config_path):
                                           cfg["geometry"]["k"], device)
 
     # --- Step 5: train the backdoored model ---------------------------------
-    print("=== Training BAIT-W backdoored model ===")
+    print("=== Training swift backdoored model ===")
     model_bait = ResNet18(num_classes).to(device)
     train_bait_w(model_bait, train_loader, test_loader, device, num_classes,
                  soft_labels, trigger, cfg["bait_w"]["epochs"],
